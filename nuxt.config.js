@@ -188,7 +188,9 @@ export default {
   env: {
     app,
     firebase: {
-      config: JSON.parse(process.env.FIREBASE_CONFIG || {}),
+      config: process.env.FIREBASE_CONFIG
+        ? JSON.parse(process.env.FIREBASE_CONFIG)
+        : {},
       analytics: process.env.FIREBASE_ANALYTICS,
       analyticsDebug: process.env.FIREBASE_ANALYTICS_DEBUG,
     },
